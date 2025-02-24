@@ -9,7 +9,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=n8n
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=15SCH9kKcaJwDKA
 
   n8n:
     build:
@@ -21,4 +21,4 @@ services:
     environment:
       DB_POSTGRESDB_HOST: postgres
       DB_TYPE: postgresdb
-      DB_POSTGRESDB_PASSWORD: password
+      DB_POSTGRESDB_PASSWORD: 15SCH9kKcaJwDKA
