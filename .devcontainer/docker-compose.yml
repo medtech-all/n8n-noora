@@ -1,5 +1,6 @@
 volumes:
   postgres-data:
+     name: n8n-postgres-data
 
 services:
   postgres:
@@ -10,7 +11,8 @@ services:
     environment:
       - POSTGRES_DB=n8n
       - POSTGRES_PASSWORD=15SCH9kKcaJwDKA
-
+    networks:
+      - n8n-net
   n8n:
     build:
       context: .
@@ -22,3 +24,16 @@ services:
       DB_POSTGRESDB_HOST: postgres
       DB_TYPE: postgresdb
       DB_POSTGRESDB_PASSWORD: 15SCH9kKcaJwDKA
+      VIRTUAL_HOST: ai.reval.ir
+      VIRTUAL_PORT: 5678
+      LETSENCRYPT_HOST: ai.reval.ir
+    depends_on:
+      - postgres
+    networks:
+      - n8n-net
+
+networks:
+  n8n-net:
+    external: true
+    name: nginx-proxy
+
