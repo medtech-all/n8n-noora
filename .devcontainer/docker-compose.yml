@@ -17,6 +17,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: noora-n8n:0.0.1
     volumes:
       - ..:/workspaces:cached
     command: sleep infinity
