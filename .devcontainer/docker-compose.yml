@@ -28,6 +28,12 @@ services:
       VIRTUAL_HOST: ai.reval.ir
       VIRTUAL_PORT: 5678
       LETSENCRYPT_HOST: ai.reval.ir
+      N8N_HOST: ai.reval.ir
+      N8N_PORT: 5678
+      N8N_PROTOCOL: https
+      NODE_ENV: production
+      WEBHOOK_URL: https://ai.reval.ir
+      GENERIC_TIMEZONE: Europe/Berlin
     depends_on:
       - postgres
     networks:
