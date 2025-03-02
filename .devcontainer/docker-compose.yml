@@ -32,6 +32,8 @@ services:
       - postgres
     networks:
       - n8n-net
+    ports:
+      - "5678:5678"
 
 networks:
   n8n-net:
